@@ -15,10 +15,10 @@ while true; do
     exit 30
   fi
   if [ -n "$DETECTIP" ]; then
-    IP=$(wget -qO- "http://myexternalip.com/raw")
+    IP=$(wget -qO- "https://api.ipify.org")
 
     if [ -n "$UPDATEIPV6" ]; then
-      IPV6=$(wget -q --output-document - http://checkipv6.dyndns.com/ | grep -o "[0-9a-f\:]\{8,\}")
+      IPV6=$(wget -qO- "https://api64.ipify.org")
     fi
   fi
   if [ -n "$DETECTIP" ] && [ -z $IP ]; then
