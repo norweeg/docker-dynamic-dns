@@ -4,8 +4,8 @@ This is a fork of [blaize/docker-dynamic-dns](https://github.com/theonemule/dock
 
 This project:
 
-- GitHub [joweisberg/docker-dynamic-dns](https://github.com/joweisberg/docker-dynamic-dns/)
-- Docker Hub [joweisberg/dynamic-dns](https://hub.docker.com/r/joweisberg/dynamic-dns/)
+- GitHub [norweeg/docker-dynamic-dns](https://github.com/norweeg/docker-dynamic-dns/)
+- Docker Hub [norweeg/dynamic-dns](https://hub.docker.com/r/norweeg/dynamic-dns/)
 
 # Docker Dynamic DNS to use Google Domains, DuckDNS, DynDNS, FreeDNS.afraid and NO-IP
 
@@ -30,7 +30,7 @@ Please follow the official documentation:
 
 ## Docker image platform / architecture
 
-The Docker image to use `joweisberg/dynamic-dns:latest`.
+The Docker image to use `norweeg/dynamic-dns:latest`.
 Build on Linux Ubuntu 20.04 LTS, Docker 19.03 and above for:
 
 | Platform | Architecture / Tags |
@@ -44,13 +44,13 @@ Build on Linux Ubuntu 20.04 LTS, Docker 19.03 and above for:
 ### Get the container
 
 ```bash
-$ docker pull joweisberg/dynamic-dns:latest
+$ docker pull norweeg/dynamic-dns:latest
 ```
 
 ### Run the container in *console mode* (notice the environment variable setting parameters for the startup command)
 
 ```bash
-$ docker run -d --restart="unless-stopped" -e TZ="Europe/Paris" -e USER="username" -e PASSWORD="password" -e SERVICE="freedns" -e HOSTNAME="sub.example.com" -e DETECTIP=1 -e INTERVAL=10 joweisberg/dynamic-dns:latest
+$ docker run -d --restart="unless-stopped" -e TZ="Europe/Paris" -e USER="username" -e PASSWORD="password" -e SERVICE="freedns" -e HOSTNAME="sub.example.com" -e DETECTIP=1 -e INTERVAL=10 norweeg/dynamic-dns:latest
 ```
 
 ### Run the container via docker-compose
@@ -60,7 +60,7 @@ version: "3.5"
 services:
   dynamic-dns:
     container_name: dynamic-dns
-    image: joweisberg/dynamic-dns:latest
+    image: norweeg/dynamic-dns:latest
     restart: unless-stopped
     environment:
       - TZ=Europe/Paris

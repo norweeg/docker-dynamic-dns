@@ -9,7 +9,7 @@
 # https://ownyourbits.com/2018/06/27/running-and-building-arm-docker-containers-in-x86/
 #
 # Build/Test specific Dockerfile:
-# docker build -f Dockerfile.arm32  -t joweisberg/glances:arm32 .
+# docker build -f Dockerfile.arm32  -t norweeg/glances:arm32 .
 # docker run -it --rm arm32v7/python:slim uname -m
 # docker run -it --rm arm32v7/python:slim cat /etc/localtime
 # docker run -it --rm arm32v7/python:slim cat /etc/timezone
@@ -21,7 +21,7 @@ FILE_NAME=${FILE_NAME%.*}               #build
 FILE_DATE=$(date +'%Y%m%d-%H%M%S')
 FILE_LOG="/var/log/$FILE_NAME.log"
 
-DOCKER_USER="joweisberg"
+DOCKER_USER="norweeg"
 
 if [ -z "$1" ] || [ -z "$(echo $1 | grep '/')" ]; then
   echo "* Require one parameter as <docker_user/docker_respository>:"
